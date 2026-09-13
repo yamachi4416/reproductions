@@ -19,6 +19,5 @@ jobs:
         with:
           sparse-checkout: ${{ inputs.folder }}
       - working-directory: ${{ inputs.folder }}
-        run: |
-          docker build --tag reproduction:latest .
-          docker run --rm reproduction:latest
+        run: docker build --tag reproduction:latest .
+      - run: docker run --rm --pull never reproduction:latest

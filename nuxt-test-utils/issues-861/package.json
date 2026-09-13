@@ -1,0 +1,22 @@
+{
+  "name": "nuxt-test-utils-issue-861",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "playwright test"
+  },
+  "dependencies": {
+    "nuxt": "4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "24.13.4",
+    "@nuxt/test-utils": "latest",
+    "@playwright/test": "1.63.0",
+    "playwright-core": "1.63.0"
+  }
+}

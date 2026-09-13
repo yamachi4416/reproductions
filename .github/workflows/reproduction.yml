@@ -1,0 +1,24 @@
+name: Reproduction
+
+on:
+  workflow_dispatch:
+    inputs:
+      folder:
+        required: true
+        type: string
+
+permissions: {}
+
+jobs:
+  run:
+    name: Run ${{ inputs.folder }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: ${{ inputs.folder }}
+      - working-directory: ${{ inputs.folder }}
+        run: |
+          docker build --tag reproduction:latest .
+          docker run --rm reproduction:latest

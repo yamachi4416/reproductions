@@ -6,7 +6,7 @@ describe('test2', () => {
     expect(location.origin).toBe('http://localhost:8080')
   })
 
-  it('useAgent', () => {
+  it('userAgent', () => {
     expect(navigator.userAgent).toBe('custom ua')
   })
 })

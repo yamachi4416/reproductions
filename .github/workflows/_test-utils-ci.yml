@@ -1,0 +1,40 @@
+name: Run ci @nuxt/test-utils
+
+on:
+  workflow_call:
+    inputs:
+      hash:
+        type: string
+        required: true
+      repository:
+        type: string
+        required: true
+      tests:
+        type: string
+        required: true
+
+permissions: {}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        shell: bash
+        run: git clone --depth 1 "https://github.com/${{ inputs.repository }}.git" .
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: 'pnpm'
+      - name: Install @nuxt/test-utils
+        shell: bash
+        env:
+          PKG_URL: https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@${{ inputs.hash }}
+        run: |
+          yq -i '.blockExoticSubdeps = false' pnpm-workspace.yaml
+          yq -i '.overrides["@nuxt/test-utils"] = strenv(PKG_URL)' pnpm-workspace.yaml
+          pnpm i --no-frozen-lockfile
+          pnpm info '@nuxt/test-utils'
+      - name: Run tests
+        run: ${{ inputs.tests }}

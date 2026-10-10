@@ -1,0 +1,50 @@
+name: CI @nuxt/test-utils
+
+on:
+  workflow_dispatch:
+    inputs:
+      hash:
+        type: string
+        required: true
+      nuxt:
+        type: boolean
+        default: true
+      nuxt-ui:
+        type: boolean
+        default: true
+      npmx:
+        type: boolean
+        default: true
+
+permissions: {}
+
+jobs:
+  nuxt:
+    if: inputs.nuxt
+    uses: ./.github/workflows/_test-utils-ci.yml
+    with:
+      hash: ${{ inputs.hash }}
+      repository: nuxt/nuxt
+      tests: |
+        pnpm run dev:prepare
+        pnpm run test:runtime
+
+  nuxt-ui:
+    if: inputs.nuxt-ui
+    uses: ./.github/workflows/_test-utils-ci.yml
+    with:
+      hash: ${{ inputs.hash }}
+      repository: nuxt/ui
+      tests: |
+        pnpm run dev:prepare
+        pnpm run test
+
+  npmx:
+    if: inputs.npmx
+    uses: ./.github/workflows/_test-utils-ci.yml
+    with:
+      hash: ${{ inputs.hash }}
+      repository: npmx-dev/npmx.dev
+      tests: |
+        pnpm run dev:prepare
+        pnpm run test

@@ -6,6 +6,9 @@ on:
       hash:
         type: string
         required: true
+      e2e:
+        type: boolean
+        default: false
       nuxt:
         type: boolean
         default: true
@@ -21,6 +24,7 @@ permissions: {}
 jobs:
   nuxt:
     if: inputs.nuxt
+    name: nuxt/nuxt - runtime
     uses: ./.github/workflows/_test-utils-ci.yml
     with:
       hash: ${{ inputs.hash }}
@@ -29,22 +33,38 @@ jobs:
         pnpm run dev:prepare
         pnpm run test:runtime
 
+  nuxt-e2e:
+    if: inputs.nuxt && inputs.e2e
+    name: nuxt/nuxt - e2e
+    uses: ./.github/workflows/_test-utils-ci.yml
+    with:
+      hash: ${{ inputs.hash }}
+      repository: nuxt/nuxt
+      setup:
+        pnpm exec playwright-core install chromium --with-deps
+      tests: |
+        pnpm run test:e2e
+
   nuxt-ui:
     if: inputs.nuxt-ui
+    name: nuxt/ui - runtime
     uses: ./.github/workflows/_test-utils-ci.yml
     with:
       hash: ${{ inputs.hash }}
       repository: nuxt/ui
+      branch: v4
       tests: |
         pnpm run dev:prepare
         pnpm run test
 
   npmx:
     if: inputs.npmx
+    name: npmx.dev - runtime
     uses: ./.github/workflows/_test-utils-ci.yml
     with:
       hash: ${{ inputs.hash }}
       repository: npmx-dev/npmx.dev
+      setup: |
+        pnpm exec playwright install chromium-headless-shell --with-deps
       tests: |
-        pnpm run dev:prepare
-        pnpm run test
+        pnpm run test:nuxt

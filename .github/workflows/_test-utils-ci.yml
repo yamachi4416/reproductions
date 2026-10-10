@@ -9,6 +9,11 @@ on:
       repository:
         type: string
         required: true
+      branch:
+        type: string
+        default: main
+      setup:
+        type: string
       tests:
         type: string
         required: true
@@ -20,21 +25,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Clone repository
-        shell: bash
-        run: git clone --depth 1 "https://github.com/${{ inputs.repository }}.git" .
+        env:
+          REPO: ${{ inputs.repository }}
+          BRANCH: ${{ inputs.branch }}
+        run: git clone --depth 1 -b "${BRANCH}" "https://github.com/${REPO}.git" .
       - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: 'pnpm'
       - name: Install @nuxt/test-utils
-        shell: bash
         env:
           PKG_URL: https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@${{ inputs.hash }}
         run: |
           yq -i '.blockExoticSubdeps = false' pnpm-workspace.yaml
-          yq -i '.overrides["@nuxt/test-utils"] = strenv(PKG_URL)' pnpm-workspace.yaml
-          pnpm i --no-frozen-lockfile
-          pnpm info '@nuxt/test-utils'
+          if yq -e '.catalog["@nuxt/test-utils"]' pnpm-workspace.yaml > /dev/null 2>&1; then
+            yq -i '.catalog["@nuxt/test-utils"] = strenv(PKG_URL)' pnpm-workspace.yaml
+            pnpm i --no-frozen-lockfile
+          else
+            pnpm add -w "${PKG_URL}"
+          fi
+      - name: Verify install
+        run: grep 'https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@' pnpm-lock.yaml
+      - name: Setup tests
+        if: inputs.setup != ''
+        run: ${{ inputs.setup }}
       - name: Run tests
         run: ${{ inputs.tests }}

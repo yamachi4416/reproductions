@@ -31,7 +31,8 @@ jobs:
       repository: nuxt/nuxt
       tests: |
         pnpm run dev:prepare
-        pnpm run test:runtime
+        pnpm run test:runtime --fsModuleCache
+        pnpm run test:runtime --fsModuleCache
 
   nuxt-e2e:
     if: inputs.nuxt && inputs.e2e
@@ -65,6 +66,20 @@ jobs:
       hash: ${{ inputs.hash }}
       repository: npmx-dev/npmx.dev
       setup: |
+        git apply --ignore-whitespace << 'EOF'
+        diff --git a/vite.config.ts b/vite.config.ts
+        --- a/vite.config.ts
+        +++ b/vite.config.ts
+        @@ -228,6 +228,7 @@ export default defineConfig({
+                       ),
+                     },
+                   },
+        +          optimizeDeps: { noDiscovery: true },
+                   test: {
+                     name: 'nuxt',
+                     include: ['test/nuxt/**/*.{test,spec}.ts'],
+        EOF
         pnpm exec playwright install chromium-headless-shell --with-deps
       tests: |
-        pnpm run test:nuxt
+        pnpm run test:nuxt --fsModuleCache
+        pnpm run test:nuxt --fsModuleCache

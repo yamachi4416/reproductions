@@ -1,0 +1,8 @@
+{
+  "name": "nuxt-test-utils-issue-1891",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "pnpm -r test"
+  }
+}

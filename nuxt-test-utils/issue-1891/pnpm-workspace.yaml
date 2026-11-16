@@ -1,0 +1,10 @@
+packages:
+  - nuxt4
+  - nuxt5
+  - msw2
+
+blockExoticSubdeps: false
+
+allowBuilds:
+  esbuild: true
+  msw: false

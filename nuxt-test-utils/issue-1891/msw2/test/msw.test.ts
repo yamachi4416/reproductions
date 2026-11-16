@@ -1,7 +1,6 @@
 // @vitest-environment nuxt
 import { http, HttpResponse } from 'msw'
 import { setupServer } from 'msw/node'
-import { createFetch } from 'ofetch'
 import { afterAll, afterEach, beforeAll, describe, expect, it } from 'vitest'
 
 const server = setupServer(
@@ -22,8 +21,6 @@ const server = setupServer(
 
 beforeAll(() => {
   server.listen({ onUnhandledRequest: 'error' })
-  // MSW v2 patches `globalThis.fetch` on `server.listen()`, so recreate `$fetch` to use the patched `fetch`
-  window.$fetch = createFetch() as typeof $fetch
 })
 afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
@@ -62,7 +59,7 @@ describe('msw v2 in nuxt environment', () => {
   })
 
   it('intercepts $fetch', async () => {
-    const data = await globalThis.$fetch('https://api.example.com/user', {
+    const data = await $fetch('https://api.example.com/user', {
       headers: { 'x-custom': 'ofetch' },
     })
     expect(data).toEqual({

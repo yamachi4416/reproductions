@@ -698,7 +698,7 @@ packages:
       '@nuxt/kit': '>=3.0.0'
 
   '@nuxt/test-utils@https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@1892':
-    resolution: {integrity: sha512-E9e/6wdDXghJvxbh/oEcAP5+UOrXUh5WAmYSaAm5dl5GYmG5NOfhTz2k8rXPP0VhEvvi0dDkHtkFPx9iO2s3rg==, tarball: https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@1892}
+    resolution: {integrity: sha512-g3/HwbNUnLfDj/F/AzCz2Ks3epzfO39qiytUBtTUN1aOzXrO0b8JUMKtcJ74nWSkWlGbcokWa3RqmZ6npkQtZg==, tarball: https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@1892}
     version: 4.4.0
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
@@ -741,8 +741,8 @@ packages:
       vitest:
         optional: true
 
-  '@nuxt/test-utils@https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@1996c2cd02d2bfea382b220631bda31f6deb22cf':
-    resolution: {integrity: sha512-E9e/6wdDXghJvxbh/oEcAP5+UOrXUh5WAmYSaAm5dl5GYmG5NOfhTz2k8rXPP0VhEvvi0dDkHtkFPx9iO2s3rg==, tarball: https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@1996c2cd02d2bfea382b220631bda31f6deb22cf}
+  '@nuxt/test-utils@https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@638f69f2349a93bf717fcdf7143e43b5617e1ac4':
+    resolution: {integrity: sha512-g3/HwbNUnLfDj/F/AzCz2Ks3epzfO39qiytUBtTUN1aOzXrO0b8JUMKtcJ74nWSkWlGbcokWa3RqmZ6npkQtZg==, tarball: https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@638f69f2349a93bf717fcdf7143e43b5617e1ac4}
     version: 4.4.0
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
@@ -3419,8 +3419,8 @@ packages:
       yaml:
         optional: true
 
-  vitest-environment-nuxt@https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@1996c2cd02d2bfea382b220631bda31f6deb22cf:
-    resolution: {integrity: sha512-+vNR+a49RNoPCF/aZs0CMgmOhm6IYrYs9je7vnd9mYJ/nvi1HBeyTif0BuWzXemAQX2AJrJBLd52fbnIGZxByQ==, tarball: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@1996c2cd02d2bfea382b220631bda31f6deb22cf}
+  vitest-environment-nuxt@https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@638f69f2349a93bf717fcdf7143e43b5617e1ac4:
+    resolution: {integrity: sha512-iVZv1U0rklrPlwM7nwiQz11ycArKE7XY92cnl4hd01KoVNZLGV9KIE/+4ZlM8cf+IdKzXVjG683o0nljE4zhUw==, tarball: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@638f69f2349a93bf717fcdf7143e43b5617e1ac4}
     version: 2.0.0
 
   vitest@5.1.0:
@@ -4649,7 +4649,7 @@ snapshots:
       tinyexec: 1.3.1
       ufo: 1.6.4
       unplugin: 3.7.0(esbuild@0.28.2)(rolldown@1.2.19)(rollup@4.68.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2))
-      vitest-environment-nuxt: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@1996c2cd02d2bfea382b220631bda31f6deb22cf
+      vitest-environment-nuxt: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@638f69f2349a93bf717fcdf7143e43b5617e1ac4
       vue: 3.5.45
     optionalDependencies:
       h3: 2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.2)
@@ -4697,7 +4697,7 @@ snapshots:
       tinyexec: 1.3.1
       ufo: 1.6.4
       unplugin: 3.7.0(esbuild@0.28.2)(rolldown@1.2.19)(rollup@4.68.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2))
-      vitest-environment-nuxt: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@1996c2cd02d2bfea382b220631bda31f6deb22cf
+      vitest-environment-nuxt: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@638f69f2349a93bf717fcdf7143e43b5617e1ac4
       vue: 3.5.45
     optionalDependencies:
       h3: 2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.2)
@@ -4745,7 +4745,7 @@ snapshots:
       tinyexec: 1.3.1
       ufo: 1.6.4
       unplugin: 3.7.0(esbuild@0.28.2)(rolldown@1.2.19)(rollup@4.68.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2))
-      vitest-environment-nuxt: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@1996c2cd02d2bfea382b220631bda31f6deb22cf
+      vitest-environment-nuxt: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@638f69f2349a93bf717fcdf7143e43b5617e1ac4
       vue: 3.5.45
     optionalDependencies:
       h3: 2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.2)
@@ -4772,7 +4772,7 @@ snapshots:
       - vite
       - webpack
 
-  '@nuxt/test-utils@https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@1996c2cd02d2bfea382b220631bda31f6deb22cf(ac506c03607c673763e9e1e21f269e32)':
+  '@nuxt/test-utils@https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@638f69f2349a93bf717fcdf7143e43b5617e1ac4(ac506c03607c673763e9e1e21f269e32)':
     dependencies:
       '@clack/prompts': 1.8.1
       '@nuxt/devtools-kit': 3.4.4(@nuxt/schema@4.6.4)(confbox@0.3.2)(dotenv@17.4.2)(giget@3.3.1)(jiti@2.7.0)(magic-string@1.4.5)(mlly@1.8.2)(rolldown@1.2.19)(unplugin@3.7.0(esbuild@0.28.2)(rolldown@1.2.19)(rollup@4.68.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2))
@@ -4793,7 +4793,7 @@ snapshots:
       tinyexec: 1.3.1
       ufo: 1.6.4
       unplugin: 3.7.0(esbuild@0.28.2)(rolldown@1.2.19)(rollup@4.68.3)(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2))
-      vitest-environment-nuxt: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@1996c2cd02d2bfea382b220631bda31f6deb22cf
+      vitest-environment-nuxt: https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@638f69f2349a93bf717fcdf7143e43b5617e1ac4
       vue: 3.5.45
     optionalDependencies:
       h3: 2.0.8(crossws@0.4.17(srvx@1.0.8))(ocache@0.3.2)
@@ -7674,9 +7674,9 @@ snapshots:
       jiti: 2.7.0
       terser: 5.51.2
 
-  vitest-environment-nuxt@https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@1996c2cd02d2bfea382b220631bda31f6deb22cf:
+  vitest-environment-nuxt@https://pkg.pr.new/nuxt/test-utils/vitest-environment-nuxt@638f69f2349a93bf717fcdf7143e43b5617e1ac4:
     dependencies:
-      '@nuxt/test-utils': https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@1996c2cd02d2bfea382b220631bda31f6deb22cf(ac506c03607c673763e9e1e21f269e32)
+      '@nuxt/test-utils': https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@638f69f2349a93bf717fcdf7143e43b5617e1ac4(ac506c03607c673763e9e1e21f269e32)
 
   vitest@5.1.0(@types/node@26.6.6)(happy-dom@21.0.4)(msw@2.15.0(@types/node@26.6.6))(vite@8.3.8(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)):
     dependencies:

@@ -1,6 +1,6 @@
 packages:
-  - nuxt4
-  - nuxt5
+  - msw3-nuxt4
+  - msw3-nuxt5
   - msw2
 
 blockExoticSubdeps: false

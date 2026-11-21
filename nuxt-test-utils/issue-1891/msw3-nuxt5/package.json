@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-test-utils-issue-1891-nuxt4",
+  "name": "nuxt-test-utils-issue-1891-msw3-nuxt5",
   "private": true,
   "type": "module",
   "scripts": {
@@ -7,7 +7,8 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "nuxt": "^4.6.4"
+    "nuxt": "npm:nuxt-nightly@5x",
+    "vue": "^3.5.0"
   },
   "devDependencies": {
     "@nuxt/test-utils": "https://pkg.pr.new/nuxt/test-utils/@nuxt/test-utils@1892",
